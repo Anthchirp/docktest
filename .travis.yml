@@ -2,5 +2,5 @@ services:
   - docker
 
 before_install:
-  - docker pull dials/test
-  - docker run dials/test /bin/sh -c "pwd; ls -la"
+  - docker pull dials/test:1
+  - docker run dials/test:1 /bin/sh -c "pwd; ls -la"
