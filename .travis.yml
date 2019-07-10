@@ -5,4 +5,4 @@ before_install:
   - docker pull dials/test:1
 
 script:
-  - docker run dials/test:1 /bin/sh -c "pwd; ls -la; source build/setpaths.sh ; cd modules/dxtbx; pytest --regression -n auto"
+  - docker run dials/test:1 /bin/sh -c "pwd; ls -la; source build/setpaths.sh ; cd build; make reconf; cd ../modules/dxtbx; pytest --regression -n auto"
