@@ -3,4 +3,6 @@ services:
 
 before_install:
   - docker pull dials/test:1
-  - docker run dials/test:1 /bin/sh -c "pwd; ls -la"
+
+script:
+  - docker run dials/test:1 /bin/sh -c "pwd; ls -la; source build/setpaths.sh ; cd modules/dxtbx; pytest --regression -n auto"
